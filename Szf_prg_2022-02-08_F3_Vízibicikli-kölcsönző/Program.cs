@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Szf_prg_2022_02_08_F3_Vízibicikli_kölcsönző
+namespace VizibicikliKolcsonzo
 {
     class Program
     {

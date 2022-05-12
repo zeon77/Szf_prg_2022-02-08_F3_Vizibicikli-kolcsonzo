@@ -35,9 +35,19 @@ namespace VizibicikliKolcsonzo
             }
 
             //7.
-            Console.WriteLine($"7. feladat: Adjon meg egy időpontot óra:perc alakban: ");
+            Console.Write($"7. feladat: Adjon meg egy időpontot óra:perc alakban: ");
             string s = Console.ReadLine();
             TimeSpan időpont = new TimeSpan(int.Parse(s.Split(':')[0]), int.Parse(s.Split(':')[1]), 0);
+            list = kolcsonzesek.Where(k => k.Tól < időpont && időpont < k.Ig).ToList();
+            if (list.Count == 0)
+            {
+                Console.WriteLine($"A megadott időpontban egy jármű sem volt vízen...");
+            }
+            else
+            {
+                Console.WriteLine($"A vízen lévő járművek: ");
+                list.ForEach(k => Console.WriteLine($"\t{k.Tól.ToString(@"hh\:mm")}-{k.Ig.ToString(@"hh\:mm")} : {k.Név}"));
+            }
         }
     }
 }

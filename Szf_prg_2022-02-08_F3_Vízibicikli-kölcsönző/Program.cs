@@ -34,6 +34,10 @@ namespace VizibicikliKolcsonzo
                 list.ForEach(k => Console.WriteLine($"\t{k.Tól.ToString(@"hh\:mm")}-{k.Ig.ToString(@"hh\:mm")}"));
             }
 
+            //7.
+            Console.WriteLine($"7. feladat: Adjon meg egy időpontot óra:perc alakban: ");
+            string s = Console.ReadLine();
+            TimeSpan időpont = new TimeSpan(int.Parse(s.Split(':')[0]), int.Parse(s.Split(':')[1]), 0);
         }
     }
 }

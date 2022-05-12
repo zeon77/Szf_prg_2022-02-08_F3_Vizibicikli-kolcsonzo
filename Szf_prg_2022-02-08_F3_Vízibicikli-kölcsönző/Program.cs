@@ -56,6 +56,15 @@ namespace VizibicikliKolcsonzo
                 bevétel += (int)Math.Ceiling((k.Ig - k.Tól).TotalMinutes / 30) * 2400;
             }
             Console.WriteLine($"8. feladat: A napi bevétel: {bevétel:C0}");
+
+            //9. 
+            StreamWriter sw = new StreamWriter("F.txt");
+            list = kolcsonzesek.Where(k => k.JAzon == 'F').ToList();
+            foreach (var k in list)
+            {
+                sw.WriteLine($"{k.Tól.ToString(@"hh\:mm")}-{k.Ig.ToString(@"hh\:mm")} : {k.Név}");
+            }
+            sw.Close();
         }
     }
 }

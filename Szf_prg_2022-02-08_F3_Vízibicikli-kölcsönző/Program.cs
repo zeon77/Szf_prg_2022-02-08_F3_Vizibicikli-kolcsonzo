@@ -48,6 +48,14 @@ namespace VizibicikliKolcsonzo
                 Console.WriteLine($"A vízen lévő járművek: ");
                 list.ForEach(k => Console.WriteLine($"\t{k.Tól.ToString(@"hh\:mm")}-{k.Ig.ToString(@"hh\:mm")} : {k.Név}"));
             }
+
+            //8.
+            int bevétel = 0;
+            foreach (var k in kolcsonzesek)
+            {
+                bevétel += (int)Math.Ceiling((k.Ig - k.Tól).TotalMinutes / 30) * 2400;
+            }
+            Console.WriteLine($"8. feladat: A napi bevétel: {bevétel:C0}");
         }
     }
 }

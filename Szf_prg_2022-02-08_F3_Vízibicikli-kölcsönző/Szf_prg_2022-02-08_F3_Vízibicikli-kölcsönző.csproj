@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Szf_prg_2022_02_08_F3_Vízibicikli_kölcsönző</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="kolcsonzesek.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

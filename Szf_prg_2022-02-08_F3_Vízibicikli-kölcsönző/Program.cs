@@ -65,6 +65,15 @@ namespace VizibicikliKolcsonzo
                 sw.WriteLine($"{k.Tól.ToString(@"hh\:mm")}-{k.Ig.ToString(@"hh\:mm")} : {k.Név}");
             }
             sw.Close();
+
+            //10.
+            Console.WriteLine($"10. feladat: Statisztika");
+            kolcsonzesek
+                .GroupBy(k => k.JAzon)
+                .Select(gr => new { JAzon = gr.Key, db = gr.Count() })
+                .OrderBy(s => s.JAzon)
+                .ToList()
+                .ForEach(s => Console.WriteLine($"\t{s.JAzon} - {s.db}"));
         }
     }
 }

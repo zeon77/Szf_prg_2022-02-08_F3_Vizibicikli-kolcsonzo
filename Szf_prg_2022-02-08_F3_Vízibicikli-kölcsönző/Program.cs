@@ -26,7 +26,7 @@ namespace VizibicikliKolcsonzo
             var list = kolcsonzesek.Where(k => k.Név == név).ToList();
             if (list.Count == 0)
             {
-                Console.WriteLine($"Nem volt ilyen nevű kölcsönző...");
+                Console.WriteLine($"\tNem volt ilyen nevű kölcsönző...");
             }
             else
             {
@@ -38,10 +38,10 @@ namespace VizibicikliKolcsonzo
             Console.Write($"7. feladat: Adjon meg egy időpontot óra:perc alakban: ");
             string s = Console.ReadLine();
             TimeSpan időpont = new TimeSpan(int.Parse(s.Split(':')[0]), int.Parse(s.Split(':')[1]), 0);
-            list = kolcsonzesek.Where(k => k.Tól < időpont && időpont < k.Ig).ToList();
+            list = kolcsonzesek.Where(k => k.Tól <= időpont && időpont <= k.Ig).ToList();
             if (list.Count == 0)
             {
-                Console.WriteLine($"A megadott időpontban egy jármű sem volt vízen...");
+                Console.WriteLine($"\tA megadott időpontban egy jármű sem volt vízen...");
             }
             else
             {
